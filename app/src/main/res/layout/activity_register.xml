@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="38dp"
+        android:text="Name"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_toRightOf="@+id/tvTelephone"
+        android:layout_toEndOf="@+id/tvTelephone"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignBottom="@+id/tvName"
+        android:layout_alignTop="@+id/tvName" />
+
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="Email"
+        android:textSize="20dp"
+        android:layout_below="@+id/etName"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_alignStart="@+id/tvName" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Email"
+        android:layout_alignBottom="@+id/Email"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_alignStart="@+id/etName"
+        android:layout_alignTop="@+id/Email" />
+
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="20dp"
+        android:layout_below="@+id/Email"
+        android:layout_alignLeft="@+id/Email"
+        android:layout_alignStart="@+id/Email"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="Email"
+        android:layout_alignBottom="@+id/tvPassword"
+        android:layout_alignLeft="@+id/etEmail"
+        android:layout_alignStart="@+id/etEmail"
+        android:layout_alignTop="@+id/tvPassword" />
+
+
+    <TextView
+        android:id="@+id/tvSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sex"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/tvPassword"
+        android:layout_alignLeft="@+id/tvPassword"
+        android:layout_alignStart="@+id/tvPassword" />
+
+    <CheckBox
+        android:id="@+id/chBoxMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:layout_alignBottom="@+id/tvSex"
+        android:layout_alignLeft="@+id/etPassword"
+        android:layout_alignStart="@+id/etPassword"
+        android:layout_alignTop="@+id/tvSex" />
+
+    <CheckBox
+        android:id="@+id/chBoxFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female"
+        android:layout_alignBottom="@+id/chBoxMale"
+        android:layout_alignRight="@+id/etPassword"
+        android:layout_alignEnd="@+id/etPassword"
+        android:layout_alignLeft="@+id/btRegister"
+        android:layout_alignStart="@+id/btRegister"
+        android:layout_alignTop="@+id/chBoxMale" />
+
+    <TextView
+        android:id="@+id/tvBloodGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blood group"
+        android:textSize="20dp"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/tvSex"
+        android:layout_alignLeft="@+id/tvSex"
+        android:layout_alignStart="@+id/tvSex" />
+
+
+    <Spinner
+        android:id="@+id/spinnerBloodGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvBloodGroup"
+        android:layout_toRightOf="@+id/btCancel"
+        android:layout_alignRight="@+id/chBoxFemale"
+        android:layout_alignEnd="@+id/chBoxFemale" />
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birthday"
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/tvBloodGroup"
+        android:layout_alignStart="@+id/tvBloodGroup" />
+
+    <EditText
+        android:id="@+id/etBirthday"
+        android:inputType="date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Birthday"
+        android:layout_alignLeft="@+id/etTelephone"
+        android:layout_alignStart="@+id/etTelephone"
+        android:layout_alignBottom="@+id/tvTelephone"
+        android:layout_alignTop="@+id/tvTelephone" />
+
+    <TextView
+        android:id="@+id/tvTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telephone"
+        android:textSize="20dp"
+        android:layout_below="@+id/tvBirthday"
+        android:layout_alignLeft="@+id/tvBirthday"
+        android:layout_alignStart="@+id/tvBirthday"
+        android:layout_marginTop="18dp" />
+
+    <EditText
+        android:id="@+id/etTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="Telephone"
+        android:layout_alignBottom="@+id/tvBirthday"
+        android:layout_toRightOf="@+id/tvBloodGroup"
+        android:layout_toEndOf="@+id/tvBloodGroup"
+        android:layout_alignTop="@+id/tvBirthday" />
+
+
+
+
+    <Button
+        android:id="@+id/btRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="69dp"
+        android:text="Register"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/chBoxMale"
+        android:layout_toEndOf="@+id/chBoxMale" />
+
+    <Button
+        android:id="@+id/btCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_alignBaseline="@+id/btRegister"
+        android:layout_alignBottom="@+id/btRegister"
+        android:layout_toRightOf="@+id/tvSex"
+        android:layout_toEndOf="@+id/tvSex" />
+
+</RelativeLayout>

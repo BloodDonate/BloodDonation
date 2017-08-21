@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Don de Sang</string>
+    <string name="lbInformation">Don\'t have Account? Please click here</string>
+    <string name="action_settings">Settings</string>
+</resources>
