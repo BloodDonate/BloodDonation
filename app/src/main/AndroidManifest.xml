@@ -9,19 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name=".Login">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".Register" />
         <activity android:name=".fragment.DonationFragment" />
-        <activity android:name=".fragment.ReservationFragment"></activity>
+        <activity android:name=".fragment.DemandeFragment" />
+        <activity android:name=".BloodActivity"></activity>
     </application>
 
 </manifest>
