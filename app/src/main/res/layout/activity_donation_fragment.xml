@@ -4,7 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorBackgroundFloating"
     tools:context="com.example.jonathandorvilier.dondesang.fragment.DonationFragment">
 
 
+    <TextView
+        android:id="@+id/tvDNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="64dp"
+        android:text="Nom" />
+
+    <EditText
+        android:id="@+id/etDNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvDNom"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tvDNom"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/tvDEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDNom"
+        android:layout_alignStart="@+id/tvDNom"
+        android:layout_below="@+id/tvDNom"
+        android:layout_marginTop="20dp"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/etDEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvDEmail"
+        android:layout_alignEnd="@+id/etDNom"
+        android:layout_alignRight="@+id/etDNom"
+        android:layout_alignTop="@+id/tvDEmail"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/tvDTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDEmail"
+        android:layout_alignStart="@+id/tvDEmail"
+        android:layout_below="@+id/tvDEmail"
+        android:layout_marginTop="18dp"
+        android:text="Telephone" />
+
+    <EditText
+        android:id="@+id/etDTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvDTelephone"
+        android:layout_alignEnd="@+id/etDEmail"
+        android:layout_alignRight="@+id/etDEmail"
+        android:layout_alignTop="@+id/tvDTelephone"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Telephone" />
+
+    <TextView
+        android:id="@+id/tvDBloodGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDTelephone"
+        android:layout_alignStart="@+id/tvDTelephone"
+        android:layout_below="@+id/tvDTelephone"
+        android:layout_marginTop="20dp"
+        android:text="Blood Group" />
+
+    <Spinner
+        android:id="@+id/spinnerDBloodGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etDTelephone"
+        android:layout_alignLeft="@+id/etDTelephone"
+        android:layout_alignRight="@+id/etDTelephone"
+        android:layout_alignStart="@+id/etDTelephone"
+        android:layout_alignTop="@+id/tvDBloodGroup" />
+
+    <TextView
+        android:id="@+id/tvDDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDBloodGroup"
+        android:layout_alignStart="@+id/tvDBloodGroup"
+        android:layout_below="@+id/spinnerDBloodGroup"
+        android:layout_marginTop="22dp"
+        android:text="Date" />
+
+    <EditText
+        android:id="@+id/etDDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvDDate"
+        android:layout_alignLeft="@+id/spinnerDBloodGroup"
+        android:layout_alignStart="@+id/spinnerDBloodGroup"
+        android:layout_alignTop="@+id/tvDDate"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/btDCance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="108dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvDEmail"
+        android:layout_toRightOf="@+id/tvDEmail"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/btDDonate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etDDate"
+        android:layout_alignRight="@+id/etDDate"
+        android:layout_alignTop="@+id/btDCance"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="Donate" />
 </RelativeLayout>

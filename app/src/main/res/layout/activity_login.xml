@@ -6,44 +6,32 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/tvName"
+    <ImageView
+        android:id="@+id/imageView_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:layout_marginTop="125dp"
-        android:layout_marginLeft="31dp"
-        android:textSize="20dp"
-        android:layout_marginStart="31dp"
+        app:srcCompat="@mipmap/donate"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
+
 
     <EditText
         android:id="@+id/etUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvName"
-        android:layout_alignTop="@+id/tvName"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/tvName"
-        android:layout_toRightOf="@+id/tvName"
-        android:ems="10"
+        android:hint="Username"
         android:inputType="textPersonName"
-        android:text="Username" />
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/imageView_logo"
+        android:layout_alignRight="@+id/etPassword"
+        android:layout_alignEnd="@+id/etPassword"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/etPassword"
+        android:layout_alignStart="@+id/etPassword" />
 
 
-    <TextView
-        android:id="@+id/Email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:layout_marginTop="29dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/tvName"
-        android:layout_toLeftOf="@+id/etUserName"
-        android:layout_toStartOf="@+id/etUserName" />
+   >
 
     <EditText
         android:id="@+id/etPassword"
@@ -51,11 +39,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="Password"
-        android:layout_alignBottom="@+id/Email"
-        android:layout_alignLeft="@+id/etUserName"
-        android:layout_alignStart="@+id/etUserName"
-        android:layout_alignTop="@+id/Email" />
+        android:hint="Password"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/etUserName" />
 
 
 
@@ -65,15 +51,18 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:layout_below="@+id/etPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp" />
+        android:layout_alignRight="@+id/imageView_logo"
+        android:layout_alignEnd="@+id/imageView_logo"
+        android:layout_marginTop="53dp" />
 
     <TextView
         android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="@string/lbInformation"
         android:layout_below="@+id/btLogin"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp" />
+
+
 </RelativeLayout>
