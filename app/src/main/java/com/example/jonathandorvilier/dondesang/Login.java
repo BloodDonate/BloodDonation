@@ -14,6 +14,11 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
     private EditText etPassword;
     private Button btLogin;
     private TextView tvRegisterLink;
+    /*
+    private ListView lvDemande;
+
+    ArrayList<DemandeSang> demandes;
+    DemandeAdapter adapter; */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,13 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
         btLogin = (Button) findViewById(R.id.btLogin);
         tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
 
+        /*lvDemande = (ListView) findViewById(R.id.lvDemande);
+
+//set adapter
+        demandes = new ArrayList<>();
+        adapter = new DemandeAdapter(this, demandes);
+        lvDemande.setAdapter(adapter); */
+
         btLogin.setOnClickListener(this);
         tvRegisterLink.setOnClickListener(this);
     }
@@ -35,9 +47,8 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
         switch (v.getId()){
 
             case R.id.btLogin:
-
-                startActivity(new Intent(this, BloodActivity.class));
-
+                startActivity(new Intent(this, MainActivity.class));
+                //getData();
                 break;
 
             case  R.id.tvRegisterLink:
@@ -48,4 +59,30 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
         }
 
     }
+
+    /*private void getData() {
+
+        String url = "http://tipeyizanpam.esy.es/blood_donation/liste_demande.php";
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(url, new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                JSONArray articleJsonResults = null;
+                try {
+                    articleJsonResults = response.getJSONArray("response");
+                    adapter.addAll(DemandeSang.fromJsonArray(articleJsonResults));
+                    adapter.notifyDataSetChanged();
+                    Log.d("Debug", demandes.toString());
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+               Log.d("echec: ",responseString.toString() );
+            }
+        });
+    } */
 }

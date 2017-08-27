@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.jonathandorvilier.dondesang.R;
 import com.example.jonathandorvilier.dondesang.fragment.DonationFragment;
-import com.example.jonathandorvilier.dondesang.fragment.DemandeFragment;
+import com.example.jonathandorvilier.dondesang.fragment.FragmentListeDemand;
 
 /**
  * Created by Jonathan Dorvilier on 8/23/2017.
@@ -18,7 +18,7 @@ public class BloodPageAdapter extends FragmentPagerAdapter implements PagerSlidi
     private int tabIcons[] = {R.mipmap.ic_reservation, R.mipmap.ic_donation, R.mipmap.ic_donate};
 
     final int PAGE_COUNT =2;
-    private String tabTitles [] ={"Reservation", "Donation"};
+    private String tabTitles [] ={"Demande", "Centre"};
 
     public BloodPageAdapter (FragmentManager fragmentManager){
         super(fragmentManager);
@@ -28,7 +28,7 @@ public class BloodPageAdapter extends FragmentPagerAdapter implements PagerSlidi
     @Override
     public Fragment getItem(int position) {
         if(position ==0){
-            return new DemandeFragment();
+            return new FragmentListeDemand();
 
         }else if(position==1) {
             return new DonationFragment();
