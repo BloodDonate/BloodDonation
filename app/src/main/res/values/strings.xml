@@ -2,4 +2,11 @@
     <string name="app_name">Don de Sang</string>
     <string name="lbInformation">Register here</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="textDoctHos"><u>Docteur et Hopital de reference \t</u>:</string>
+    <string name="textGSanguin"><u>Groupe sanguin demandeur \t</u>:</string>
+    <string name="textLitSang"><u>Litre de sang demandé \t</u>:</string>
 </resources>
