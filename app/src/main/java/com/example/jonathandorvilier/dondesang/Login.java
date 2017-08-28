@@ -3,10 +3,22 @@ package com.example.jonathandorvilier.dondesang;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class Login extends ActionBarActivity implements View.OnClickListener {
 
@@ -47,33 +59,47 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
         switch (v.getId()){
 
             case R.id.btLogin:
-                startActivity(new Intent(this, MainActivity.class));
-                //getData();
+                if(etUsername.getText().toString().equals("") && etPassword.getText().toString().equals("")){
+                    Toast.makeText(Login.this, "un ou plusieurs champs sont vides...", Toast.LENGTH_SHORT).show();
+                }else{
+                    getData();
+                }
                 break;
 
             case  R.id.tvRegisterLink:
-
                 startActivity(new Intent(this, Register.class));
-
                 break;
         }
 
     }
 
-    /*private void getData() {
+    private void getData() {
 
-        String url = "http://tipeyizanpam.esy.es/blood_donation/liste_demande.php";
+        String url = "http://tipeyizanpam.esy.es/blood_donation/bd_login.php";
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get(url, new JsonHttpResponseHandler(){
+        RequestParams params = new RequestParams();
+        params.put("user_name", etUsername.getText().toString());
+        params.put("user_password", etPassword.getText().toString());
+        client.post(url,params, new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 JSONArray articleJsonResults = null;
                 try {
-                    articleJsonResults = response.getJSONArray("response");
-                    adapter.addAll(DemandeSang.fromJsonArray(articleJsonResults));
-                    adapter.notifyDataSetChanged();
-                    Log.d("Debug", demandes.toString());
+                    Object objectlogin = response.get("response");
+                    if(objectlogin instanceof JSONArray){
+                        articleJsonResults = response.getJSONArray("response");
+                        Intent i = new Intent(Login.this, MainActivity.class);
+                        i.putExtra("id_user",articleJsonResults.getJSONObject(0).getString("id_user"));
+                        i.putExtra("nom_user",articleJsonResults.getJSONObject(0).getString("nom_user"));
+                        i.putExtra("telephone_user",articleJsonResults.getJSONObject(0).getString("telephone_user"));
+                        i.putExtra("birthday_user",articleJsonResults.getJSONObject(0).getString("birthday_user"));
+                        i.putExtra("sexe_user",articleJsonResults.getJSONObject(0).getString("sexe_user"));
+                        i.putExtra("gsanguin_user",articleJsonResults.getJSONObject(0).getString("gsanguin_user"));
+                        i.putExtra("username",articleJsonResults.getJSONObject(0).getString("username"));
+                        startActivity(i);
+                    }
+
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
@@ -82,7 +108,8 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                Log.d("echec: ",responseString.toString() );
+                Toast.makeText(Login.this, "Verifier nom et mot de passe...", Toast.LENGTH_SHORT).show();
             }
         });
-    } */
+    }
 }
