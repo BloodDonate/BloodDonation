@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        app:layout_collapseMode="parallax"
+        app:layout_collapseParallaxMultiplier="0.5">
+
+        <TextView
+            android:id="@+id/tvNomUser"
+            android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Djason Sylvaince"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/textLitSang"
+               android:textColor="@android:color/black"
+               android:textSize="20sp" />
+
+            <TextView
+               android:id="@+id/tvQteSang"
+                android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                android:text="12.5 L"
+                android:textColor="#4c4c4c"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/textGSanguin"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvGsanguin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O+"
+                android:textColor="#4c4c4c"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+       <TextView
+           android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/textDoctHos"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+           android:id="@+id/tvDrReference"
+           android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+           android:text="Dr Juno Pierre"
+            android:textColor="#4c4c4c"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvHopital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Hopital de la Delivrance"
+           android:textColor="#4c4c4c"
+           android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnDonner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Donner"/>
+    </LinearLayout>

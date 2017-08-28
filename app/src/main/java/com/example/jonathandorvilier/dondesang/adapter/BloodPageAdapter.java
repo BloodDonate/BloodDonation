@@ -4,35 +4,34 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.astuetz.PagerSlidingTabStrip;
-import com.example.jonathandorvilier.dondesang.R;
-import com.example.jonathandorvilier.dondesang.fragment.DonationFragment;
-import com.example.jonathandorvilier.dondesang.fragment.DemandeFragment;
+import com.example.jonathandorvilier.dondesang.fragment.FragmentListeDemand;
+import com.example.jonathandorvilier.dondesang.fragment.FragmentServiceCenter;
+
 
 /**
  * Created by Jonathan Dorvilier on 8/23/2017.
- */
+*/
 
-public class BloodPageAdapter extends FragmentPagerAdapter implements PagerSlidingTabStrip.IconTabProvider {
+public class BloodPageAdapter extends FragmentPagerAdapter {
 
-    private int tabIcons[] = {R.mipmap.ic_reservation, R.mipmap.ic_donation, R.mipmap.ic_donate};
+    //private int tabIcons[] = {R.mipmap.ic_reservation, R.mipmap.ic_donation, R.mipmap.ic_donate};
 
-    final int PAGE_COUNT =2;
-    private String tabTitles [] ={"Reservation", "Donation"};
+    final int PAGE_COUNT = 2;
+    private String tabTitles[] = {"Demande", "Centre de Service"};
 
-    public BloodPageAdapter (FragmentManager fragmentManager){
+    public BloodPageAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
 
     }
 
     @Override
     public Fragment getItem(int position) {
-        if(position ==0){
-            return new DemandeFragment();
+        if (position == 0) {
+            return new FragmentListeDemand();
 
-        }else if(position==1) {
-            return new DonationFragment();
-        }else {
+        } else if (position == 1) {
+            return new FragmentServiceCenter();
+        } else {
 
             return null;
         }
@@ -50,8 +49,10 @@ public class BloodPageAdapter extends FragmentPagerAdapter implements PagerSlidi
     }
 
 
-    @Override
+    /*@Override
     public int getPageIconResId(int position) {
         return tabIcons[position];
-    }
+    }*/
 }
+
+
