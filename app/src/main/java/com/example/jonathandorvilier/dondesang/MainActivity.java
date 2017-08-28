@@ -3,17 +3,18 @@ package com.example.jonathandorvilier.dondesang;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.jonathandorvilier.dondesang.adapter.BloodPageAdapter;
@@ -27,12 +28,23 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     FloatingActionButton fab;
     Toolbar toolbar;
+    View header;
+    TextView tvNomLogin, tvTelLogin;
+    String id_user, nom_user, telephone_user, birthday_user, sexe_user, gsanguin_user, username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        id_user=getIntent().getStringExtra("id_user");
+        nom_user=getIntent().getStringExtra("nom_user");
+        telephone_user=getIntent().getStringExtra("telephone_user");
+        birthday_user=getIntent().getStringExtra("birthday_user");
+        sexe_user=getIntent().getStringExtra("sexe_user");
+        gsanguin_user=getIntent().getStringExtra("gsanguin_user");
+        username=getIntent().getStringExtra("username");
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +71,13 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        header = navigationView.getHeaderView(0);
+        tvNomLogin = (TextView) header.findViewById(R.id.tvNomLogin);
+        tvTelLogin = (TextView) header.findViewById(R.id.tvTelLogin);
+
+        tvNomLogin.setText(nom_user);
+        tvTelLogin.setText(telephone_user);
     }
 
     @Override
