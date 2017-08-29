@@ -44,6 +44,12 @@ public class ServiceCenterAdapter extends ArrayAdapter<ServiceCenter>{
         tvTelephoneCentre=(TextView) convertView.findViewById(R.id.tvTelephoneCentre);
         tvDrReference=(TextView) convertView.findViewById(R.id.tvDrReference);
 
+        tvNomCentre.setText(serviceCenters.getNom_centre());
+        tvAdresseCentre.setText(serviceCenters.getAdresse_centre());
+        tvTelephoneCentre.setText(serviceCenters.getTel_centre());
+        tvDrReference.setText(serviceCenters.getDoc_ref_centre());
+
+
         return convertView;
     }
 

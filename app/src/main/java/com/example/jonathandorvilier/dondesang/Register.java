@@ -16,6 +16,8 @@ import com.example.jonathandorvilier.dondesang.adapter.CustomSpinnerAdapter;
 
 public class Register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    //AdapterView.OnItemSelectedListener
+
     String[] BloodGroup = {"O+", "O-", "AB+", "AB-", "A+", "A-", "B+", "B-"};
     int flags[] = {R.drawable.dondesang, R.drawable.dondesang, R.drawable.dondesang, R.drawable.dondesang, R.drawable.dondesang, R.drawable.dondesang, R.drawable.dondesang, R.drawable.dondesang};
 
@@ -35,6 +37,32 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        etName =(EditText)findViewById(R.id.etName);
+        etPassword=(EditText)findViewById(R.id.etPassword);
+        etEmail=(EditText)findViewById(R.id.etEmail);
+
+
+        etBirthday=(EditText)findViewById(R.id.etBirthday);
+        etTelephone=(EditText)findViewById(R.id.etTelephone);
+        //spinner=(Spinner) findViewById(R.id.spinnerBloodGroup);
+        btCancel=(Button) findViewById(R.id.btCancel);
+        btRegister=(Button)findViewById(R.id.btRegister);
+
+
+        btRegister.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+
+                    case R.id.btRegister:
+                        break;
+                }
+            }
+        });
+
+
 
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
         Spinner spin = (Spinner) findViewById(R.id.spinnerBloodGroup);
@@ -75,7 +103,4 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }

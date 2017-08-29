@@ -52,7 +52,7 @@ public class FragmentServiceCenter extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_list_demande,parent,false);
+        View v = inflater.inflate(R.layout.fragment_service_center,parent,false);
         lvServiceCenter = (ListView) v.findViewById(R.id.lvServiceCenter);
         progressBar = (ProgressBar ) v.findViewById(R.id.progressBar);
         swipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.swipeRefreshLayout);
