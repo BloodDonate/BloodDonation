@@ -12,5 +12,8 @@
     <string name="textAdressCentre">Adresse du centre</string>
     <string name="textTelCentre">Telephone du centre</string>
     <string name="textDoctRefCentre">Docteur reference du centre</string>
-
+    <string-array name="sexeUser">
+        <item>M</item>
+        <item>F</item>
+    </string-array>
 </resources>

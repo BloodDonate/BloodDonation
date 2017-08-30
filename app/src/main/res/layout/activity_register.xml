@@ -33,6 +33,15 @@
         android:ems="10"
         android:inputType="textPersonName"/>
 
+    <EditText
+        android:id="@+id/etUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"/>
+
 
     <TextView
         android:id="@+id/Email"
@@ -90,20 +99,18 @@
         android:text="Sex"
         android:textSize="20dp" />
 
-    <RadioGroup
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvSex"
-        android:orientation="horizontal"
-        android:id="@+id/radioBut">
+        android:id="@+id/spSexe"
+        android:entries="@array/sexeUser">
 
-    </RadioGroup>
+    </Spinner>
 
     <TextView
         android:id="@+id/tvBloodGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioBut"
         android:text="Blood group"
         android:textSize="20dp"
         android:layout_alignTop="@+id/spinnerBloodGroup"
@@ -186,30 +193,4 @@
         android:layout_marginLeft="41dp"
         android:layout_marginStart="41dp"
         android:layout_marginBottom="72dp" />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="M"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/tvSex"
-        android:layout_alignLeft="@+id/radioButton3"
-        android:layout_alignStart="@+id/radioButton3"
-        android:layout_alignRight="@+id/radioButton3"
-        android:layout_alignEnd="@+id/radioButton3" />
-
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="F"
-        android:layout_alignBottom="@+id/tvSex"
-        android:layout_alignRight="@+id/etBirthday"
-        android:layout_alignEnd="@+id/etBirthday"
-        android:layout_toRightOf="@+id/btCancel"
-        android:layout_toEndOf="@+id/btCancel" />
-
 </RelativeLayout>
