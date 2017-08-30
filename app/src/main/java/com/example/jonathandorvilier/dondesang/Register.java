@@ -40,7 +40,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
     private CheckBox chBoxFemale;
     private EditText etBirthday, etUserName;
     private  EditText etTelephone;
-    private Spinner spinner, spSexe;
+    private Spinner spinnerBloodGroup, spSexe;
     Spinner spin;
     private Button btCancel;
     private RadioButton rbMasculin, rbFeminin;
@@ -56,11 +56,9 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
         etPassword=(EditText)findViewById(R.id.etPassword);
         etEmail=(EditText)findViewById(R.id.etEmail);
         etUserName=(EditText)findViewById(R.id.etUserName);
-
-
         etBirthday=(EditText)findViewById(R.id.etBirthday);
         etTelephone=(EditText)findViewById(R.id.etTelephone);
-        spinner=(Spinner) findViewById(R.id.spinnerBloodGroup);
+        spinnerBloodGroup=(Spinner) findViewById(R.id.spinnerBloodGroup);
         spSexe=(Spinner) findViewById(R.id.spSexe);
         btCancel=(Button) findViewById(R.id.btCancel);
         btRegister=(Button)findViewById(R.id.btRegister);
@@ -73,7 +71,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                 switch (v.getId()){
 
                     case R.id.btRegister:
-                        Toast.makeText(Register.this, ""+spinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, ""+spinnerBloodGroup.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                             /*if (etName.getText().toString().equals("") && etTelephone.getText().toString().equals("") && etBirthday.getText().toString().equals("") && etUserName.getText().toString().equals("") && etPassword.getText().toString().equals("")) {
                                 Toast.makeText(Register.this, "Des champs sont vides", Toast.LENGTH_SHORT).show();
                             } else {
@@ -105,7 +103,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
         params.put("telephone_user", etTelephone.getText().toString());
         params.put("birthday_user", etBirthday.getText().toString());
         params.put("sexe_user", spSexe.getSelectedItem().toString());
-        params.put("gsanguin_user", spinner.getSelectedItem().toString());
+        params.put("gsanguin_user", spinnerBloodGroup.getSelectedItem().toString());
         params.put("username", etUserName.getText().toString());
         params.put("userpass", etPassword.getText().toString());
         client.post(url,params, new JsonHttpResponseHandler(){
