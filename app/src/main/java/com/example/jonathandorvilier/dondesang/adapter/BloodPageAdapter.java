@@ -29,9 +29,15 @@ public class BloodPageAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             return new FragmentListeDemand();
 
-        } else if (position == 1) {
+        }
+        else
+            if (position == 1) {
             return new FragmentServiceCenter();
-        } else {
+        }
+
+
+        else
+            {
 
             return null;
         }

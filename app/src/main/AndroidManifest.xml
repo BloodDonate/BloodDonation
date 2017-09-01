@@ -11,30 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login">
+        <activity android:name="model.SplashScreen">
             android:configChanges="keyboardHidden"
             android:windowSoftInputMode="stateHidden">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Register" />
-        <activity android:name=".fragment.DonationFragment" />
-        <activity android:name=".fragment.DemandeFragment" />
-        <activity android:name=".BloodActivity"></activity>
-
+        <activity android:name=".Login" />
+        <activity android:name=".BloodActivity" />
         <activity
             android:name=".MainActivity"
+            android:configChanges="keyboardHidden"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="keyboardHidden"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
-
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activity_Rules"></activity>
     </application>
 
 </manifest>
