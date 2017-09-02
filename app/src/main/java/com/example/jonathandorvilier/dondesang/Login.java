@@ -1,6 +1,8 @@
 package com.example.jonathandorvilier.dondesang;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -26,11 +28,17 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
     private EditText etPassword;
     private Button btLogin;
     private TextView tvRegisterLink;
+    int iVar= 0;
+
+    SharedPreferences sharedPreferences ;
+    SharedPreferences.Editor editor ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
 
         etUsername = (EditText) findViewById(R.id.etUserName);
         etPassword = (EditText) findViewById(R.id.etPassword);
@@ -39,6 +47,21 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
 
         btLogin.setOnClickListener(this);
         tvRegisterLink.setOnClickListener(this);
+
+        /*
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable()
+                {
+                    public void run()
+                    {
+                        Toast.makeText(Login.this, "new var: "+iVar, Toast.LENGTH_SHORT).show();
+                        iVar++; }
+                });
+            }
+        }, 2000, 2000); */
     }
 
     @Override
@@ -84,13 +107,24 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
                             if (objectlogin instanceof JSONArray) {
                                 articleJsonResults = response.getJSONArray("response");
                                 Intent i = new Intent(Login.this, MainActivity.class);
-                                i.putExtra("id_user", articleJsonResults.getJSONObject(0).getString("id_user"));
+                                /*i.putExtra("id_user", articleJsonResults.getJSONObject(0).getString("id_user"));
                                 i.putExtra("nom_user", articleJsonResults.getJSONObject(0).getString("nom_user"));
                                 i.putExtra("telephone_user", articleJsonResults.getJSONObject(0).getString("telephone_user"));
                                 i.putExtra("birthday_user", articleJsonResults.getJSONObject(0).getString("birthday_user"));
                                 i.putExtra("sexe_user", articleJsonResults.getJSONObject(0).getString("sexe_user"));
                                 i.putExtra("gsanguin_user", articleJsonResults.getJSONObject(0).getString("gsanguin_user"));
-                                i.putExtra("username", articleJsonResults.getJSONObject(0).getString("username"));
+                                i.putExtra("username", articleJsonResults.getJSONObject(0).getString("username")); */
+
+                                editor = sharedPreferences.edit();
+                                editor.putString("id_user", articleJsonResults.getJSONObject(0).getString("id_user"));
+                                editor.putString("nom_user", articleJsonResults.getJSONObject(0).getString("nom_user"));
+                                editor.putString("telephone_user", articleJsonResults.getJSONObject(0).getString("telephone_user"));
+                                editor.putString("birthday_user", articleJsonResults.getJSONObject(0).getString("birthday_user"));
+                                editor.putString("sexe_user", articleJsonResults.getJSONObject(0).getString("sexe_user"));
+                                editor.putString("gsanguin_user", articleJsonResults.getJSONObject(0).getString("gsanguin_user"));
+                                editor.putString("username", articleJsonResults.getJSONObject(0).getString("username"));
+                                editor.apply();
+
                                 startActivity(i);
                             }
 
