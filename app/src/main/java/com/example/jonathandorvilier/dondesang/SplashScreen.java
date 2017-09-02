@@ -14,7 +14,6 @@ public class SplashScreen extends Activity{
 
     SharedPreferences sharedPreferences ;
     SharedPreferences.Editor editor ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -25,7 +24,6 @@ public class SplashScreen extends Activity{
         //editor = sharedPreferences.edit();
         //editor.putString("telephoneLogin", response.getProperty("telephone").toString());
        // telephoneLogin = sharedPreferences.getString("telephoneLogin", null);
-
         Thread timerThread = new Thread(){
             public void run(){
                 try{
