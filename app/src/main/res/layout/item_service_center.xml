@@ -80,5 +80,13 @@
         android:textColor="#4c4c4c"
         android:textSize="18sp" />
 
+    <ImageView
+        android:layout_marginTop="-50dp"
+        android:id="@+id/ivMap_service"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_map" />
+
 
 </LinearLayout>

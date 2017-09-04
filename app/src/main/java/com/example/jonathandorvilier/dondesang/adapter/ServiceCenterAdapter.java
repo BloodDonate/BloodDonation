@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jonathandorvilier.dondesang.R;
 import com.example.jonathandorvilier.dondesang.model.ServiceCenter;
@@ -23,6 +25,8 @@ public class ServiceCenterAdapter extends ArrayAdapter<ServiceCenter>{
     TextView    tvAdresseCentre;
     TextView tvTelephoneCentre;
     TextView    tvDrReference;
+    ImageView  ivMap_service;
+
 
 
     public ServiceCenterAdapter(Context context, ArrayList<ServiceCenter> serviceCenters) {
@@ -36,19 +40,26 @@ public class ServiceCenterAdapter extends ArrayAdapter<ServiceCenter>{
 
         if(convertView==null){
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.activity_service_center, parent, false);
+            convertView = inflater.inflate(R.layout.item_service_center, parent, false);
         }
 
         tvNomCentre=(TextView) convertView.findViewById(R.id.tvNomCentre);
         tvAdresseCentre=(TextView) convertView.findViewById(R.id.tvAdresseCentre);
         tvTelephoneCentre=(TextView) convertView.findViewById(R.id.tvTelephoneCentre);
         tvDrReference=(TextView) convertView.findViewById(R.id.tvDrReference);
+        ivMap_service=(ImageView) convertView.findViewById(R.id.ivMap_service);
 
         tvNomCentre.setText(serviceCenters.getNom_centre());
         tvAdresseCentre.setText(serviceCenters.getAdresse_centre());
         tvTelephoneCentre.setText(serviceCenters.getTel_centre());
         tvDrReference.setText(serviceCenters.getDoc_ref_centre());
 
+        ivMap_service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Map centre a: ", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return convertView;
     }
