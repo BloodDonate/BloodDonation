@@ -3,18 +3,22 @@
 
        <group android:checkableBehavior="single">
             <item
-               android:id="@+id/nav_camera"
+               android:id="@+id/nav_list_demande"
                android:icon="@drawable/ic_menu_camera"
                android:title="Vos demandes" />
            <item
-                android:id="@+id/nav_gallery"
-               android:icon="@drawable/ic_menu_gallery" android:title="Gallery" />
+                android:id="@+id/nav_question"
+               android:icon="@drawable/ic_menu_gallery" android:title="Aptitude" />
+           <!--Evaluez votre aptitude au don-->
+           <!--L’application propose via son onglet « Aptitude » une évaluation de votre capacité à donner votre sang. Un questionnaire demande ainsi si vous avez eu une infection les deux dernières semaines, si vous avez déjà subi une transfusion sanguine ou encore des soins dentaires ces dernières 24 heures. A la fin des dix questions, l’application vous informe si vous êtes apte à faire un don du sang.-->
+           <!--L’onglet « Où donner » référence les sites fixes et mobiles de collecte de sang près de chez vous. En cliquant sur un lieu, les horaires et les coordonnées vous sont indiqués. Vous pouvez alors calculer votre itinéraire, envoyer les informations par mail ou encore enregistrer une date dans votre calendrier.-->
+
            <item
-               android:id="@+id/nav_slideshow"
+               android:id="@+id/nav_vos_don"
                android:icon="@drawable/ic_menu_slideshow"
                 android:title="Vos dons" />
             <item
-                android:id="@+id/nav_manage"
+                android:id="@+id/nav_aide"
                android:icon="@drawable/ic_menu_manage"
                 android:title="Aide" />
         </group>
@@ -22,11 +26,11 @@
         <item android:title="">
             <menu>
                 <item
-                   android:id="@+id/nav_share"
+                   android:id="@+id/nav_partage"
                   android:icon="@drawable/ic_menu_share"
                    android:title="Partager" />
                <item
-                   android:id="@+id/nav_send"
+                   android:id="@+id/nav_params"
                    android:icon="@drawable/ic_menu_send"
                     android:title="Paramètres" />
                 <item
