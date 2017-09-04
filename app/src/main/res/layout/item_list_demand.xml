@@ -88,10 +88,24 @@
             android:text="Hopital de la Delivrance"
            android:textColor="#4c4c4c"
            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/btnDonner"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Donner"/>
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_margin="20dp"
+                android:drawableLeft="@drawable/ic_share"
+                android:id="@+id/shareDemande"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Partager"/>
+            <Button
+                android:layout_margin="20dp"
+                android:id="@+id/btnDonner"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Donner"/>
+        </LinearLayout>
+
     </LinearLayout>

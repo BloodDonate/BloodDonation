@@ -1,5 +1,7 @@
 package com.example.jonathandorvilier.dondesang;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     View header;
     TextView tvNomLogin, tvTelLogin;
    String id_user, nom_user, telephone_user, birthday_user, sexe_user, gsanguin_user, username;
-
+    SharedPreferences sharedPreferences ;
+    SharedPreferences.Editor editor ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +42,25 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         setContentView(R.layout.activity_main);
        // toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+        sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
 
 
 
-        id_user=getIntent().getStringExtra("id_user");
+        /*id_user=getIntent().getStringExtra("id_user");
         nom_user=getIntent().getStringExtra("nom_user");
         telephone_user=getIntent().getStringExtra("telephone_user");
         birthday_user=getIntent().getStringExtra("birthday_user");
         sexe_user=getIntent().getStringExtra("sexe_user");
         gsanguin_user=getIntent().getStringExtra("gsanguin_user");
-        username=getIntent().getStringExtra("username");
+        username=getIntent().getStringExtra("username"); */
 
+        id_user=sharedPreferences.getString("id_user", null);
+        nom_user=sharedPreferences.getString("nom_user", null);
+        telephone_user=sharedPreferences.getString("telephone_user", null);
+        birthday_user=sharedPreferences.getString("birthday_user", null);
+        sexe_user=sharedPreferences.getString("sexe_user", null);
+        gsanguin_user=sharedPreferences.getString("gsanguin_user", null);
+        username=sharedPreferences.getString("username", null);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -121,18 +132,20 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                // Handle navigation view item clicks here.
                        int id = item.getItemId();
 
-                       if (id == R.id.nav_camera) {
+                       if (id == R.id.nav_list_demande) {
                      // Handle the camera action
-                           } else if (id == R.id.nav_gallery) {
-                           } else if (id == R.id.nav_slideshow) {
+                           } else if (id == R.id.nav_question) {
+                           } else if (id == R.id.nav_vos_don) {
 
-                       } else if (id == R.id.nav_manage) {
+                       } else if (id == R.id.nav_aide) {
 
-                          } else if (id == R.id.nav_share) {
+                          } else if (id == R.id.nav_partage) {
 
-                            } else if (id == R.id.nav_send) {
+                            } else if (id == R.id.nav_params) {
 
-                           }
+                           }else if (id == R.id.nav_logout) {
+
+                       }
 
                         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
               drawer.closeDrawer(GravityCompat.START);
