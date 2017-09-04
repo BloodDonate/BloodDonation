@@ -24,5 +24,13 @@ Si le donneur est en bonne santé, le don du sang ne comporte aucun risque.Son �
 Le don de sang est sans danger : il n\'existe aucune conséquence à court terme et à moyen terme sur le plan de la sécurité.<br />
 Il est recommandé de s\'alimenter et de boire de l\'eau avant un don.<br /></string>
 
+    <string name="question2">Les conditions de poids à remplir pour donner son sang</string>
+    <string name="reponse2"><p>
+Il faut peser au minimum 50 kg. Cette condition réglementaire se justifie ainsi :
+        <li>Le volume de sang prélevé ne doit pas dépasser 13 % du volume sanguin total du donneur pour que l\'organisme puisse s\'adapter après le don.</li>
+        <li>Pour garantir l\'efficacité d\'une transfusion, le volume de sang total prélevé doit être au minimum de 400 ml</li>
+        <li>400 ml représente 12 % du volume sanguin total d\'un donneur pesant 50 kg.</li>
+
+    </p></string>
 
 </resources>
