@@ -1,6 +1,7 @@
 package com.example.jonathandorvilier.dondesang.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jonathandorvilier.dondesang.MapsActivity;
 import com.example.jonathandorvilier.dondesang.R;
 import com.example.jonathandorvilier.dondesang.model.ServiceCenter;
 
@@ -57,6 +59,8 @@ public class ServiceCenterAdapter extends ArrayAdapter<ServiceCenter>{
         ivMap_service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(getContext(), MapsActivity.class);
+                v.getContext().startActivity(i);
                 Toast.makeText(getContext(), "Map centre a: ", Toast.LENGTH_SHORT).show();
             }
         });

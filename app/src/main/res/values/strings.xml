@@ -14,8 +14,21 @@
     <string name="textDoctRefCentre">Docteur reference du centre</string>
     <string name="RulesText">RulesText</string>
     <string-array name="sexeUser">
+        <item>Choisir</item>
         <item>M</item>
         <item>F</item>
+    </string-array>
+
+    <string-array name="gSanguin">
+        <item>Choisir</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
     </string-array>
 
     <string name="question1">Qui peut donner son sang?</string>
@@ -25,6 +38,7 @@ Si le donneur est en bonne santé, le don du sang ne comporte aucun risque.Son �
 Si le donneur est en bonne santé, le don du sang ne comporte aucun risque.Son état de santé faisant l\'objet d\'un examen au cours de l\'entretien médical préalable au don de sang.<br />
 Le don de sang est sans danger : il n\'existe aucune conséquence à court terme et à moyen terme sur le plan de la sécurité.<br />
 Il est recommandé de s\'alimenter et de boire de l\'eau avant un don.<br /></string>
+    <string name="title_activity_maps">Map</string>
 
     <string name="question2">Les conditions de poids à remplir pour donner son sang</string>
     <string name="reponse2"><p>
