@@ -88,9 +88,9 @@ public class FragmentListeDemand extends Fragment {
              adapter = new DemandeAdapter(getContext(), demandes);
                 lvDemande.setAdapter(adapter);
 
-                       String url = "http://tipeyizanpam.esy.es/blood_donation/liste_demande.php";
+                       String url = "http://astruitier.com/blood_donation/liste_demande.php";
 
-                        AsyncHttpClient client = new AsyncHttpClient();
+                        AsyncHttpClient client = new AsyncHttpClient(true, 80, 443);
                client.get(url, new JsonHttpResponseHandler(){
 
 

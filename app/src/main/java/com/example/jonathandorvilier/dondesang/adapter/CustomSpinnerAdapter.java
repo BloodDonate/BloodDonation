@@ -20,6 +20,7 @@ public class CustomSpinnerAdapter extends BaseAdapter{
     int flags[];
     String[] BloodGroup;
     LayoutInflater inflter;
+    String dItem;
 
     public CustomSpinnerAdapter(Context applicationContext, int[] flags, String[] BloodGroup) {
         this.context = applicationContext;
@@ -50,6 +51,9 @@ public class CustomSpinnerAdapter extends BaseAdapter{
         TextView names = (TextView) view.findViewById(R.id.tvCustomSpinner);
         icon.setImageResource(flags[i]);
         names.setText(BloodGroup[i]);
+        dItem=(BloodGroup[i]);
         return view;
     }
+
+
 }
