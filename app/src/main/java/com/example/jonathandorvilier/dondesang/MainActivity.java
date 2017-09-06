@@ -1,8 +1,10 @@
 package com.example.jonathandorvilier.dondesang;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -138,13 +140,24 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                            } else if (id == R.id.nav_vos_don) {
 
                        } else if (id == R.id.nav_aide) {
-
+                           Intent i = new Intent(MainActivity.this, activity_Rules.class);
+                           startActivity(i);
+                           overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                           } else if (id == R.id.nav_partage) {
 
                             } else if (id == R.id.nav_params) {
 
                            }else if (id == R.id.nav_logout) {
-
+                           Intent i = new Intent(MainActivity.this, Login.class);
+                           editor = sharedPreferences.edit();
+                           editor.clear();
+                           editor.apply();
+                           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                               finishAffinity();
+                           }else{
+                               i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // this will clear all the stack
+                           }
+                           startActivity(i);
                        }
 
                         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
