@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
        // toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
@@ -123,6 +126,13 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                              if (id == R.id.action_settings) {
                        return true;
                    }
+                   if(id == android.R.id.home){
+                       if(drawer.isDrawerOpen(GravityCompat.START)){
+                           drawer.closeDrawer(GravityCompat.START);
+                       }else {
+                           drawer.openDrawer(GravityCompat.START);
+                       }
+                   }
 
              return super.onOptionsItemSelected(item);
            }
@@ -137,6 +147,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                        if (id == R.id.nav_list_demande) {
                      // Handle the camera action
                            } else if (id == R.id.nav_question) {
+                               Intent i = new Intent(MainActivity.this, QuestionActivity.class);
+                               startActivity(i);
+                               overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                            } else if (id == R.id.nav_vos_don) {
 
                        } else if (id == R.id.nav_aide) {
@@ -144,6 +157,12 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                            startActivity(i);
                            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                           } else if (id == R.id.nav_partage) {
+                           Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                           sharingIntent.setType("text/plain");
+                           String shareBodyText = "Telecharger l'application * Don de sang *....";
+                           sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"Don de sang");
+                           sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBodyText);
+                           startActivity(Intent.createChooser(sharingIntent, "Option de partage :"));
 
                             } else if (id == R.id.nav_params) {
 
@@ -159,8 +178,6 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                            }
                            startActivity(i);
                        }
-
-                        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
               drawer.closeDrawer(GravityCompat.START);
               return true;
           }

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:style="http://schemas.android.com/tools">
     <string name="app_name">Don de Sang</string>
     <string name="lbInformation">Register here</string>
     <string name="action_settings">Settings</string>
@@ -37,6 +37,13 @@ Si le donneur est en bonne santé, le don du sang ne comporte aucun risque.Son �
 Le don de sang est sans danger : il n\'existe aucune conséquence à court terme et à moyen terme sur le plan de la sécurité.<br />
 Il est recommandé de s\'alimenter et de boire de l\'eau avant un don.<br /></string>
     <string name="title_activity_maps">Map</string>
-
+    <!-- margin-left: 5em;-->
+    <string name="q_apt_1"><b>1:<p style="{margin-left:5em}"></p></b>Avez-vous déjà fait un don de sang ?</string>
+    <string name="q_apt_2"><b>2:<p style="{margin-left:5em}"></p></b>Vous sentez-vous actuellement en bonne santé ?</string>
+    <string name="q_apt_3"><b>3:<p style="{margin-left:5em}"></p></b>Au cours des 72 dernières heures, avez-vous eu un traitement dentaire ou d’hygiène dentaire ?</string>
+    <string name="q_apt_4"><b>4:<p style="{margin-left:5em}"></p></b>Au cours des 4 dernières semaines, avez-vous reçu des soins médicaux ou présenté une fièvre supérieure à 38° C ?</string>
+    <string name="q_apt_5"><b>5:<p style="{margin-left:5em}"></p></b>Avez-vous déjà présenté l’une des maladies suivantes :   tuberculose,   borréliose,   fièvre typhoïde, brucellose,   infection osseuse,   fièvre Q, toxoplasmose,   babésiose, maladie de Chagas, paludisme,   leishmaniose,   Ebola,   Zika ?</string>
+    <string name="q_apt_6"><b>6:<p style="{margin-left:5em}"></p></b>Au cours des 4 derniers mois, avez-vous eu :   un tatouage,   une gastro-, coloscopie, un traitement par acupuncture,   une épilation par aiguille,   un maquillage permanent, un piercing,   un contact avec du sang étranger (blessure par piqûre d’aiguille, éclaboussures de sang ayant atteint les yeux, la bouche ou d’autres parties du corps) ?</string>
+    <string name="q_apt_7"><b>7:<p style="{margin-left:5em}"></p></b>Un membre de votre entourage, de votre milieu familial, ou votre partenaire sexuel habituel a-t-il présenté une jaunisse (hépatite) ou la maladie à virus Zika au cours des 12 derniers mois ?</string>
 
 </resources>
