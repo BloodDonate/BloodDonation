@@ -33,7 +33,6 @@
         android:layout_alignStart="@+id/etPassword" />
 
 
-   >
 
     <EditText
         android:id="@+id/etPassword"

@@ -2,6 +2,7 @@ package com.example.jonathandorvilier.dondesang.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,14 +22,10 @@ import java.util.List;
 
 public class DemandeAdapter extends ArrayAdapter<DemandeSang> {
 
-    TextView tvNomUser;
-    TextView tvQteSang;
-    TextView tvGsanguin;
-    TextView tvDrReference;
-    TextView tvHopital;
-    Button btnDonner;
-    Button shareDemande;
-
+    TextView tvNomUser,tvQteSang,tvGsanguin,tvDrReference,tvHopital,tvTypeDemand,tvExpDate;
+    Button btnDonner,shareDemande;
+    SharedPreferences sharedPreferences ;
+    SharedPreferences.Editor editor ;
 
     public DemandeAdapter(Context context, List<DemandeSang> demandeSangs){
                 super(context, android.R.layout.simple_list_item_1, demandeSangs);
@@ -43,11 +40,15 @@ public class DemandeAdapter extends ArrayAdapter<DemandeSang> {
                         convertView = inflater.inflate(R.layout.item_list_demand, parent, false);
                    }
 
+                sharedPreferences = getContext().getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
+
                                 tvNomUser=(TextView) convertView.findViewById(R.id.tvNomUser);
                tvQteSang=(TextView) convertView.findViewById(R.id.tvQteSang);
                tvGsanguin=(TextView) convertView.findViewById(R.id.tvGsanguin);
                tvDrReference=(TextView) convertView.findViewById(R.id.tvDrReference);
                tvHopital=(TextView) convertView.findViewById(R.id.tvHopital);
+                tvExpDate=(TextView) convertView.findViewById(R.id.tvExpDate);
+               tvTypeDemand=(TextView) convertView.findViewById(R.id.tvTypeDemand);
                btnDonner=(Button) convertView.findViewById(R.id.btnDonner);
                 shareDemande=(Button) convertView.findViewById(R.id.shareDemande);
 
@@ -57,11 +58,19 @@ public class DemandeAdapter extends ArrayAdapter<DemandeSang> {
                 tvDrReference.setText(demandeSang.getDr_reference());
                 tvHopital.setText(demandeSang.getHospital_de_soin());
 
+                tvExpDate.setText(demandeSang.getExpirationDate());
+                tvTypeDemand.setText(demandeSang.getTypeDemande());
+                
                btnDonner.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                                Toast.makeText(getContext(), "Donner a: "+ demandeSang.getNom_user(), Toast.LENGTH_SHORT).show();
-                            }
+                 sharedPreferences.getBoolean("eligibleUserDon", false);
+                     if(sharedPreferences.getBoolean("eligibleUserDon", false)== false){
+                         Toast.makeText(getContext(), "Vous ne pouvez pas participer, verifier le questionnaire....", Toast.LENGTH_SHORT).show();
+                     }else if(sharedPreferences.getBoolean("eligibleUserDon", false)== true){
+                         Toast.makeText(getContext(), "Donner a: "+ demandeSang.getNom_user(), Toast.LENGTH_SHORT).show();
+                     }
+             }
          });
 
                 shareDemande.setOnClickListener(new View.OnClickListener() {

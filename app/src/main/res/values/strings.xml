@@ -14,21 +14,26 @@
     <string name="textDoctRefCentre">Docteur reference du centre</string>
     <string name="RulesText">RulesText</string>
     <string-array name="sexeUser">
-        <item>Choisir</item>
-        <item>M</item>
-        <item>F</item>
+        <item value="0">Choisir</item>
+        <item value="1">M</item>
+        <item value="2">F</item>
     </string-array>
 
     <string-array name="gSanguin">
-        <item>Choisir</item>
-        <item>O+</item>
-        <item>O-</item>
-        <item>AB+</item>
-        <item>AB-</item>
-        <item>A+</item>
-        <item>A-</item>
-        <item>B+</item>
-        <item>B-</item>
+        <item value="0">Choisir</item>
+        <item value="1">O+</item>
+        <item value="2">O-</item>
+        <item value="3">AB+</item>
+        <item value="4">AB-</item>
+        <item value="5">A+</item>
+        <item value="6">A-</item>
+        <item value="7">B+</item>
+        <item value="8">B-</item>
+    </string-array>
+
+    <string-array name="typeDemande">
+        <item>URGENT</item>
+        <item>NORMAL</item>
     </string-array>
 
     <string name="question1">Qui peut donner son sang?</string>
@@ -45,5 +50,7 @@ Il est recommandé de s\'alimenter et de boire de l\'eau avant un don.<br /></st
     <string name="q_apt_5"><b>5:<p style="{margin-left:5em}"></p></b>Avez-vous déjà présenté l’une des maladies suivantes :   tuberculose,   borréliose,   fièvre typhoïde, brucellose,   infection osseuse,   fièvre Q, toxoplasmose,   babésiose, maladie de Chagas, paludisme,   leishmaniose,   Ebola,   Zika ?</string>
     <string name="q_apt_6"><b>6:<p style="{margin-left:5em}"></p></b>Au cours des 4 derniers mois, avez-vous eu :   un tatouage,   une gastro-, coloscopie, un traitement par acupuncture,   une épilation par aiguille,   un maquillage permanent, un piercing,   un contact avec du sang étranger (blessure par piqûre d’aiguille, éclaboussures de sang ayant atteint les yeux, la bouche ou d’autres parties du corps) ?</string>
     <string name="q_apt_7"><b>7:<p style="{margin-left:5em}"></p></b>Un membre de votre entourage, de votre milieu familial, ou votre partenaire sexuel habituel a-t-il présenté une jaunisse (hépatite) ou la maladie à virus Zika au cours des 12 derniers mois ?</string>
+    <string name="textExpDate">Date Expiration Demande:</string>
+    <string name="textTypeDemand">Type Demande:</string>
 
 </resources>

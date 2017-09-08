@@ -1,5 +1,7 @@
 package com.example.jonathandorvilier.dondesang;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -14,16 +16,20 @@ public class QuestionActivity extends AppCompatActivity {
     private RadioGroup q1,q2,q3,q4,q5,q6,q7;
     private RadioButton radioButton1,radioButton2,radioButton3,radioButton4,radioButton5,radioButton6,radioButton7;
     private Button btnVerifier;
+    SharedPreferences sharedPreferences ;
+    SharedPreferences.Editor editor ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
+        sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Questionnaire");
+        getSupportActionBar().setTitle("Questionnaire :");
 
         btnVerifier = (Button) findViewById(R.id.btnVerifier);
 
@@ -55,10 +61,16 @@ public class QuestionActivity extends AppCompatActivity {
                 radioButton6 = (RadioButton) findViewById(selected6);
                 radioButton7 = (RadioButton) findViewById(selected7);
 
+                editor = sharedPreferences.edit();
                 if(q1.getCheckedRadioButtonId() != -1 && q2.getCheckedRadioButtonId() != -1 && q3.getCheckedRadioButtonId() != -1 && q4.getCheckedRadioButtonId() != -1 && q5.getCheckedRadioButtonId() != -1 && q6.getCheckedRadioButtonId() != -1 && q7.getCheckedRadioButtonId() != -1){
-                    if(radioButton1.getText()=="Non" && radioButton2.getText()=="Non" && radioButton3.getText()=="Non" && radioButton4.getText()=="Non" && radioButton5.getText()=="Non" && radioButton6.getText()=="Non" && radioButton7.getText()=="Non"){
+                    if(radioButton1.getText().equals("Non") || radioButton2.getText().equals("Non") || radioButton3.getText().equals("Non") || radioButton4.getText().equals("Non") || radioButton5.getText().equals("Non") || radioButton6.getText().equals("Non") || radioButton7.getText().equals("Non")){
                         Toast.makeText(QuestionActivity.this, "Vous ne pouvez pas....", Toast.LENGTH_SHORT).show();
+                        editor.putBoolean("eligibleUserDon", false);
+                        editor.apply();
                     }else{
+                        editor.putBoolean("eligibleUserDon", true);
+                        editor.apply();
+
                         Toast.makeText(getApplicationContext(),
                                 "1: "+radioButton1.getText()+
                                         "\n2: "+radioButton2.getText()+
