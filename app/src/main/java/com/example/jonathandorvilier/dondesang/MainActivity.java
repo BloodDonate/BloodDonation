@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -18,10 +18,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.jonathandorvilier.dondesang.adapter.BloodPageAdapter;
+import com.example.jonathandorvilier.dondesang.fragment.FragmentMakeDemand;
 
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -33,69 +35,100 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
      FloatingActionButton fab;
      Toolbar toolbar;
     View header;
+    ImageView imageProfil;
     TextView tvNomLogin, tvTelLogin;
    String id_user, nom_user, telephone_user, birthday_user, sexe_user, gsanguin_user, username;
     SharedPreferences sharedPreferences ;
     SharedPreferences.Editor editor ;
+    int pagerPosition=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       // toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
         sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
+        if(sharedPreferences.getString("id_user", null)!=null){
 
+            setContentView(R.layout.activity_main);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+            id_user=sharedPreferences.getString("id_user", null);
+            nom_user=sharedPreferences.getString("nom_user", null);
+            telephone_user=sharedPreferences.getString("telephone_user", null);
+            birthday_user=sharedPreferences.getString("birthday_user", null);
+            sexe_user=sharedPreferences.getString("sexe_user", null);
+            gsanguin_user=sharedPreferences.getString("gsanguin_user", null);
+            username=sharedPreferences.getString("username", null);
 
-        /*id_user=getIntent().getStringExtra("id_user");
-        nom_user=getIntent().getStringExtra("nom_user");
-        telephone_user=getIntent().getStringExtra("telephone_user");
-        birthday_user=getIntent().getStringExtra("birthday_user");
-        sexe_user=getIntent().getStringExtra("sexe_user");
-        gsanguin_user=getIntent().getStringExtra("gsanguin_user");
-        username=getIntent().getStringExtra("username"); */
+            fab = (FloatingActionButton) findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-        id_user=sharedPreferences.getString("id_user", null);
-        nom_user=sharedPreferences.getString("nom_user", null);
-        telephone_user=sharedPreferences.getString("telephone_user", null);
-        birthday_user=sharedPreferences.getString("birthday_user", null);
-        sexe_user=sharedPreferences.getString("sexe_user", null);
-        gsanguin_user=sharedPreferences.getString("gsanguin_user", null);
-        username=sharedPreferences.getString("username", null);
+                    /*Snackbar.make(view, "Replace with your own action: "+pagerPosition, Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show(); */
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-             @Override
-            public void onClick(View view) {
-                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                                              .setAction("Action", null).show();
-                          }
-        });
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentMakeDemand makedemand = FragmentMakeDemand.newInstance("Fiche Demande");
+                    makedemand.show(fm, "fragment_make_demand");
+                }
+            });
 
-                      vpPager = (ViewPager) findViewById(R.id.viewpager);
-               vpPager.setAdapter(new BloodPageAdapter(getSupportFragmentManager()));
-                        tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-              tabsStrip.setIndicatorColor(Color.RED);
-             // Attach the view pager to the tab strip
-                      tabsStrip.setViewPager(vpPager);
+            vpPager = (ViewPager) findViewById(R.id.viewpager);
+            vpPager.setAdapter(new BloodPageAdapter(getSupportFragmentManager()));
+            tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+            tabsStrip.setIndicatorColor(Color.RED);
+            // Attach the view pager to the tab strip
+            tabsStrip.setViewPager(vpPager);
 
-                       drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-               toggle = new ActionBarDrawerToggle(
-                       this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-               drawer.setDrawerListener(toggle);
-              toggle.syncState();
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+            vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-        header = navigationView.getHeaderView(0);
-        tvNomLogin = (TextView) header.findViewById(R.id.tvNomLogin);
-        tvTelLogin = (TextView) header.findViewById(R.id.tvTelLogin);
-        tvNomLogin.setText(nom_user);
-        tvTelLogin.setText(telephone_user);
+                @Override
+                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                }
+
+                @Override
+                public void onPageSelected(int position) {
+                    if(position==1){
+                        fab.setVisibility(View.GONE);
+                    }else if(position==0){
+                        fab.setVisibility(View.VISIBLE);
+                    }else{
+                        fab.setVisibility(View.VISIBLE);
+                    }
+                    pagerPosition=position;
+                }
+
+                @Override
+                public void onPageScrollStateChanged(int state) {
+
+                }
+            });
+            drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.setDrawerListener(toggle);
+            toggle.syncState();
+
+            navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+
+            header = navigationView.getHeaderView(0);
+            tvNomLogin = (TextView) header.findViewById(R.id.tvNomLogin);
+            tvTelLogin = (TextView) header.findViewById(R.id.tvTelLogin);
+            imageProfil = (ImageView) header.findViewById(R.id.imageView);
+            tvNomLogin.setText(nom_user);
+            tvTelLogin.setText(telephone_user);
+
+            imageProfil.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getApplicationContext(), ProfilActivity.class);
+                    startActivity(i);
+                }
+            });
+        }
 
     }
 
@@ -146,12 +179,18 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
                        if (id == R.id.nav_list_demande) {
                      // Handle the camera action
+                           Intent i = new Intent(MainActivity.this, VosDemandesActivity.class);
+                           startActivity(i);
+                           overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
                            } else if (id == R.id.nav_question) {
                                Intent i = new Intent(MainActivity.this, QuestionActivity.class);
                                startActivity(i);
                                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                            } else if (id == R.id.nav_vos_don) {
-
+                           Intent i = new Intent(MainActivity.this, VosDonsActivity.class);
+                           startActivity(i);
+                           overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                        } else if (id == R.id.nav_aide) {
                            Intent i = new Intent(MainActivity.this, activity_Rules.class);
                            startActivity(i);
