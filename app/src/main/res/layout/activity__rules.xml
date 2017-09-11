@@ -31,6 +31,48 @@
             android:text="@string/reponse1"
             android:textSize="18sp" />
 
+
+        <TextView
+            android:id="@+id/tvquestion2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:textSize="20dp"
+            android:text="@string/question2"
+            android:textStyle="normal|bold"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/tvRepons2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:scrollbars="vertical"
+            android:text="@string/reponse2"
+
+            android:textSize="18sp" />
+
+
+
+        <TextView
+            android:id="@+id/tvquestion3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:textSize="20dp"
+            android:text="@string/question3"
+            android:textStyle="normal|bold"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/tvRepons3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:scrollbars="vertical"
+            android:text="@string/reponse3"
+            android:textSize="18sp" />
+
     </LinearLayout>
 
 </ScrollView>

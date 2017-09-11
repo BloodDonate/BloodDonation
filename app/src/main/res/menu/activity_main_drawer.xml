@@ -15,11 +15,11 @@
 
            <item
                android:id="@+id/nav_vos_don"
-               android:icon="@drawable/ic_menu_slideshow"
+               android:icon="@mipmap/ic_menu_dons"
                 android:title="Vos dons" />
             <item
                 android:id="@+id/nav_aide"
-               android:icon="@drawable/ic_menu_manage"
+               android:icon="@drawable/ic_menu_help"
                 android:title="Aide" />
         </group>
 
@@ -31,11 +31,11 @@
                    android:title="Partager" />
                <item
                    android:id="@+id/nav_params"
-                   android:icon="@drawable/ic_menu_send"
+                   android:icon="@drawable/ic_menu_parametre"
                     android:title="Paramètres" />
                 <item
                     android:id="@+id/nav_logout"
-                    android:icon="@drawable/ic_menu_send"
+                    android:icon="@drawable/ic_menu_deconnexion"
                     android:title="Deconnexion" />
            </menu>
        </item>
