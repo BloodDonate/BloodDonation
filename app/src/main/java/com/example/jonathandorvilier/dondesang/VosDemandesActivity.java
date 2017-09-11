@@ -1,11 +1,37 @@
 package com.example.jonathandorvilier.dondesang;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+
+import com.example.jonathandorvilier.dondesang.adapter.VosDemandesAdapter;
+import com.example.jonathandorvilier.dondesang.model.DemandeSang;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
 
 public class VosDemandesActivity extends AppCompatActivity {
 
+    ListView lvVosDemande;
+    ArrayList<DemandeSang> demandes;
+    VosDemandesAdapter adapter;
+    ProgressBar progress;
+    private SwipeRefreshLayout swiperefresh;
+    SharedPreferences sharedPreferences ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,6 +40,29 @@ public class VosDemandesActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Vos demandes :");
+
+        sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
+
+        lvVosDemande = (ListView) findViewById(R.id.lvDemande);
+        progress = (ProgressBar ) findViewById(R.id.progress);
+        swiperefresh = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                progress.setVisibility(View.VISIBLE);
+                getData();
+                swiperefresh.setRefreshing(false);
+            }
+        });
+
+        // Configure the refreshing colors
+        swiperefresh.setColorSchemeResources(android.R.color.holo_red_light,
+                android.R.color.holo_orange_dark,
+                android.R.color.holo_red_dark);
+
+        progress.setVisibility(View.VISIBLE);
+        getData();
     }
 
 
@@ -27,4 +76,43 @@ public class VosDemandesActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+    private void getData() {
+        //set adapter
+        demandes = new ArrayList<>();
+        adapter = new VosDemandesAdapter(getApplicationContext(), demandes);
+        lvVosDemande.setAdapter(adapter);
+
+        String url = "http://astruitier.com/blood_donation/liste_vos_demand.php";
+
+        AsyncHttpClient client = new AsyncHttpClient(true, 80, 443);
+        client.get(url, new JsonHttpResponseHandler(){
+
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                JSONArray articleJsonResults = null;
+                try {
+                    articleJsonResults = response.getJSONArray("response");
+                    adapter.addAll(DemandeSang.fromJsonArray(articleJsonResults));
+                    adapter.notifyDataSetChanged();
+                    Log.d("Debug", demandes.toString());
+                    progress.setVisibility(View.GONE);
+                }catch (JSONException e){
+                    e.printStackTrace();
+                    getData();
+                }
+            }
+
+
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Log.d("echec: ",responseString.toString() );
+                getData();
+            }
+        });
+    }
+
 }
