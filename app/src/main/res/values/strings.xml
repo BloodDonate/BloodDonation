@@ -38,15 +38,26 @@ Si le donneur est en bonne santé, le don du sang ne comporte aucun risque.Son �
 Si le donneur est en bonne santé, le don du sang ne comporte aucun risque.Son état de santé faisant l\'objet d\'un examen au cours de l\'entretien médical préalable au don de sang.<br />
 Le don de sang est sans danger : il n\'existe aucune conséquence à court terme et à moyen terme sur le plan de la sécurité.<br />
 Il est recommandé de s\'alimenter et de boire de l\'eau avant un don.<br /></string>
+
     <string name="title_activity_maps">Map</string>
 
     <string name="question2">Les conditions de poids à remplir pour donner son sang</string>
     <string name="reponse2"><p>
-Il faut peser au minimum 50 kg. Cette condition réglementaire se justifie ainsi :
-        <li>Le volume de sang prélevé ne doit pas dépasser 13 % du volume sanguin total du donneur pour que l\'organisme puisse s\'adapter après le don.</li>
-        <li>Pour garantir l\'efficacité d\'une transfusion, le volume de sang total prélevé doit être au minimum de 400 ml</li>
-        <li>400 ml représente 12 % du volume sanguin total d\'un donneur pesant 50 kg.</li>
+Il faut peser au minimum 50 kg. Cette condition réglementaire se justifie ainsi :<br />
+•	Le volume de sang prélevé ne doit pas dépasser 13 % du volume sanguin total du donneur pour que l\'organisme puisse s\'adapter après le don.<br />
+•	Pour garantir l\'efficacité d\'une transfusion, le volume de sang total prélevé doit être au minimum de 400 ml.<br />
+•	400 ml représente 12 % du volume sanguin total d\'un donneur pesant 50 kg.<br />
 
     </p></string>
 
+    <string name="question3">Les conditions d\'âge à remplir pour donner son sang</string>
+    <string name="reponse3">
+
+        <p>
+L\'âge diffère un peu selon les types de dons pratiqués :<br />
+•	Pour le don de sang total : le donneur doit avoir entre 18 à 70 ans (moins de 60 ans pour un premier don / de 65 à 70 ans : sous réserve que chaque don soit autorisé par un médecin de l\'établissement de transfusion sanguine)<br />
+•	Pour le don de plasma : le donneur doit avoir entre 18 à 65 ans.<br />
+•	Pour le don de plaquettes : le donneur doit avoir entre 18 à 60 ans.<br />
+        </p>
+    </string>
 </resources>
