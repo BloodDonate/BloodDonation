@@ -71,7 +71,6 @@ public class FragmentListeDemand extends Fragment {
 
                         progress.setVisibility(View.VISIBLE);
                getData();
-
                       return v;
            }
 

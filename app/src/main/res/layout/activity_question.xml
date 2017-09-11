@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context="com.example.jonathandorvilier.dondesang.QuestionActivity">
+
+    <TextView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QUESTIONNAIRE"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_weight="0.1"/>
+
+    <ScrollView
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q_apt_1"/>
+            <RadioGroup
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:id="@+id/q1"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q1True"
+                    android:text="Oui"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q1False"
+                    android:text="Non"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q_apt_2"/>
+            <RadioGroup
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_margin="5dp"
+                android:id="@+id/q2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q2True"
+                    android:text="Oui"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q2False"
+                    android:text="Non"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q_apt_3"/>
+            <RadioGroup
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_margin="5dp"
+                android:id="@+id/q3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q3True"
+                    android:text="Oui"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q3False"
+                    android:text="Non"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q_apt_4"/>
+            <RadioGroup
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_margin="5dp"
+                android:id="@+id/q4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q4True"
+                    android:text="Oui"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q4False"
+                    android:text="Non"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q_apt_5"/>
+            <RadioGroup
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_margin="5dp"
+                android:id="@+id/q5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q5True"
+                    android:text="Oui"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q5False"
+                    android:text="Non"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q_apt_6"/>
+            <RadioGroup
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_margin="5dp"
+                android:id="@+id/q6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q6True"
+                    android:text="Oui"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q6False"
+                    android:text="Non"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q_apt_7"/>
+            <RadioGroup
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_margin="5dp"
+                android:id="@+id/q7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q7True"
+                    android:text="Oui"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/q7False"
+                    android:text="Non"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+    <Button
+        android:layout_weight="0.1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVerifier"
+        android:text="VERIFIER"/>
+
+</LinearLayout>

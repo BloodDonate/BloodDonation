@@ -2,9 +2,10 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="vertical"
+        android:id="@+id/lnAllInfo"
         app:layout_collapseMode="parallax"
         app:layout_collapseParallaxMultiplier="0.5">
 
@@ -63,8 +64,48 @@
 
         </LinearLayout>
 
-       <TextView
-           android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lnMoreInfo">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/textTypeDemand"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvTypeDemand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="URGENT"
+            android:textColor="#4c4c4c"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/textExpDate"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvExpDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="2000-02-12"
+            android:textColor="#4c4c4c"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="@string/textDoctHos"
@@ -72,11 +113,11 @@
             android:textSize="20sp" />
 
         <TextView
-           android:id="@+id/tvDrReference"
-           android:layout_width="match_parent"
+            android:id="@+id/tvDrReference"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-           android:text="Dr Juno Pierre"
+            android:text="Dr Juno Pierre"
             android:textColor="#4c4c4c"
             android:textSize="18sp" />
 
@@ -86,8 +127,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Hopital de la Delivrance"
-           android:textColor="#4c4c4c"
-           android:textSize="18sp" />
+            android:textColor="#4c4c4c"
+            android:textSize="18sp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -107,5 +148,6 @@
                 android:layout_height="wrap_content"
                 android:text="Donner"/>
         </LinearLayout>
+    </LinearLayout>
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:style="http://schemas.android.com/tools">
     <string name="app_name">Don de Sang</string>
     <string name="lbInformation">Register here</string>
     <string name="action_settings">Settings</string>
@@ -14,21 +14,26 @@
     <string name="textDoctRefCentre">Docteur reference du centre</string>
     <string name="RulesText">RulesText</string>
     <string-array name="sexeUser">
-        <item>Choisir</item>
-        <item>M</item>
-        <item>F</item>
+        <item value="0">Choisir</item>
+        <item value="1">M</item>
+        <item value="2">F</item>
     </string-array>
 
     <string-array name="gSanguin">
-        <item>Choisir</item>
-        <item>O+</item>
-        <item>O-</item>
-        <item>AB+</item>
-        <item>AB-</item>
-        <item>A+</item>
-        <item>A-</item>
-        <item>B+</item>
-        <item>B-</item>
+        <item value="0">Choisir</item>
+        <item value="1">O+</item>
+        <item value="2">O-</item>
+        <item value="3">AB+</item>
+        <item value="4">AB-</item>
+        <item value="5">A+</item>
+        <item value="6">A-</item>
+        <item value="7">B+</item>
+        <item value="8">B-</item>
+    </string-array>
+
+    <string-array name="typeDemande">
+        <item>URGENT</item>
+        <item>NORMAL</item>
     </string-array>
 
     <string name="question1">Qui peut donner son sang?</string>
@@ -41,6 +46,7 @@ Il est recommandé de s\'alimenter et de boire de l\'eau avant un don.<br /></st
 
     <string name="title_activity_maps">Map</string>
 
+
     <string name="question2">Les conditions de poids à remplir pour donner son sang</string>
     <string name="reponse2"><p>
 Il faut peser au minimum 50 kg. Cette condition réglementaire se justifie ainsi :<br />
@@ -52,12 +58,25 @@ Il faut peser au minimum 50 kg. Cette condition réglementaire se justifie ainsi
 
     <string name="question3">Les conditions d\'âge à remplir pour donner son sang</string>
     <string name="reponse3">
-
-        <p>
+              <p>
 L\'âge diffère un peu selon les types de dons pratiqués :<br />
 •	Pour le don de sang total : le donneur doit avoir entre 18 à 70 ans (moins de 60 ans pour un premier don / de 65 à 70 ans : sous réserve que chaque don soit autorisé par un médecin de l\'établissement de transfusion sanguine)<br />
 •	Pour le don de plasma : le donneur doit avoir entre 18 à 65 ans.<br />
 •	Pour le don de plaquettes : le donneur doit avoir entre 18 à 60 ans.<br />
         </p>
     </string>
+
+    <!-- margin-left: 5em;-->
+    <string name="q_apt_1"><b>1:<p style="{margin-left:5em}"></p></b>Avez-vous déjà fait un don de sang ?</string>
+    <string name="q_apt_2"><b>2:<p style="{margin-left:5em}"></p></b>Vous sentez-vous actuellement en bonne santé ?</string>
+    <string name="q_apt_3"><b>3:<p style="{margin-left:5em}"></p></b>Au cours des 72 dernières heures, avez-vous eu un traitement dentaire ou d’hygiène dentaire ?</string>
+    <string name="q_apt_4"><b>4:<p style="{margin-left:5em}"></p></b>Au cours des 4 dernières semaines, avez-vous reçu des soins médicaux ou présenté une fièvre supérieure à 38° C ?</string>
+    <string name="q_apt_5"><b>5:<p style="{margin-left:5em}"></p></b>Avez-vous déjà présenté l’une des maladies suivantes :   tuberculose,   borréliose,   fièvre typhoïde, brucellose,   infection osseuse,   fièvre Q, toxoplasmose,   babésiose, maladie de Chagas, paludisme,   leishmaniose,   Ebola,   Zika ?</string>
+    <string name="q_apt_6"><b>6:<p style="{margin-left:5em}"></p></b>Au cours des 4 derniers mois, avez-vous eu :   un tatouage,   une gastro-, coloscopie, un traitement par acupuncture,   une épilation par aiguille,   un maquillage permanent, un piercing,   un contact avec du sang étranger (blessure par piqûre d’aiguille, éclaboussures de sang ayant atteint les yeux, la bouche ou d’autres parties du corps) ?</string>
+    <string name="q_apt_7"><b>7:<p style="{margin-left:5em}"></p></b>Un membre de votre entourage, de votre milieu familial, ou votre partenaire sexuel habituel a-t-il présenté une jaunisse (hépatite) ou la maladie à virus Zika au cours des 12 derniers mois ?</string>
+    <string name="textExpDate">Date Expiration Demande:</string>
+    <string name="textTypeDemand">Type Demande:</string>
+
+
+
 </resources>

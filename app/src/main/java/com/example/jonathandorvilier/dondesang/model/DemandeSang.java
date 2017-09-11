@@ -18,6 +18,8 @@ public class DemandeSang {
     String dr_reference;
     String hospital_de_soin;
     String nom_user;
+    String expirationDate;
+    String typeDemande;
 
     public DemandeSang() {
            }
@@ -73,10 +75,25 @@ public class DemandeSang {
                return nom_user;
             }
 
-             public void setNom_user(String nom_user) {
+            public void setNom_user(String nom_user) {
                 this.nom_user = nom_user;
             }
 
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public String getTypeDemande() {
+        return typeDemande;
+    }
+
+    public void setTypeDemande(String typeDemande) {
+        this.typeDemande = typeDemande;
+    }
 
              public DemandeSang(JSONObject jsonObject) {
                 try {
@@ -87,6 +104,9 @@ public class DemandeSang {
                        this.dr_reference = jsonObject.getString("dr_reference");
                         this.hospital_de_soin = jsonObject.getString("hospital_de_soin");
                         this.nom_user = jsonObject.getString("nom_user");
+
+                        this.expirationDate = jsonObject.getString("expirationDate");
+                        this.typeDemande = jsonObject.getString("typeDemande");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

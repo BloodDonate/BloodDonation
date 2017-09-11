@@ -187,7 +187,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                         articleJsonResults = response.getJSONArray("response");
                         articleJsonResults.getJSONObject(0).getString("saveUser");
 
-                        if(articleJsonResults.getJSONObject(0).getString("saveUser")=="success"){
+                        if(articleJsonResults.getJSONObject(0).getString("saveUser").equals("success")){
                             Intent i = new Intent(Register.this, Login.class);
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                                 finishAffinity();
@@ -196,7 +196,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                             }
                             startActivity(i);
                             progress.dismiss();
-                        }else if(articleJsonResults.getJSONObject(0).getString("saveUser")=="echec"){
+                        }else if(articleJsonResults.getJSONObject(0).getString("saveUser").equals("echec")){
                             progress.dismiss();
                             Toast.makeText(Register.this, "Essayer a nouveau, ce numero existe...", Toast.LENGTH_SHORT).show();
                         }

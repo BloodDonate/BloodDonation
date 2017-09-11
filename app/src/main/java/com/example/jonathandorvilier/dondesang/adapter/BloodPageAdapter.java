@@ -13,9 +13,7 @@ import com.example.jonathandorvilier.dondesang.fragment.FragmentServiceCenter;
 */
 
 public class BloodPageAdapter extends FragmentPagerAdapter {
-
     //private int tabIcons[] = {R.mipmap.ic_reservation, R.mipmap.ic_donation, R.mipmap.ic_donate};
-
     final int PAGE_COUNT = 2;
     private String tabTitles[] = {"Demande", "Centre de Service"};
 
