@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jonathandorvilier.dondesang.VosDonsActivity">
+    tools:context="com.example.jonathandorvilier.dondesang.VosDonsActivity"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:id="@+id/progress"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="false"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swiperefresh"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_marginTop="5dp"
+            android:id="@+id/lvDemande"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>
