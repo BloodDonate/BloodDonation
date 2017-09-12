@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
             tvNomLogin = (TextView) header.findViewById(R.id.tvNomLogin);
             tvTelLogin = (TextView) header.findViewById(R.id.tvTelLogin);
             imageProfil = (ImageView) header.findViewById(R.id.imageView);
-            tvNomLogin.setText(nom_user);
+            tvNomLogin.setText(nom_user+" "+id_user);
             tvTelLogin.setText(telephone_user);
 
             imageProfil.setOnClickListener(new View.OnClickListener() {
