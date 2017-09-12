@@ -78,7 +78,7 @@ public class DemandeAdapter extends ArrayAdapter<DemandeSang> {
                btnDonner=(Button) convertView.findViewById(R.id.btnDonner);
                 shareDemande=(Button) convertView.findViewById(R.id.shareDemande);
 
-                tvNomUser.setText(demandeSang.getNom_user());
+                tvNomUser.setText(demandeSang.getNom_user()+" - "+demandeSang.getId_user());
                 tvQteSang.setText(demandeSang.getQte_sang()+" L");
                 tvGsanguin.setText(demandeSang.getGsanguin());
                 tvDrReference.setText(demandeSang.getDr_reference());
@@ -94,7 +94,7 @@ public class DemandeAdapter extends ArrayAdapter<DemandeSang> {
                      if(sharedPreferences.getBoolean("eligibleUserDon", false)== false){
                          Toast.makeText(getContext(), "Vous ne pouvez pas participer, verifier le questionnaire....", Toast.LENGTH_SHORT).show();
                      }else if(sharedPreferences.getBoolean("eligibleUserDon", false)== true){
-                         if(sharedPreferences.getString("id_user", null)==demandeSang.getId_user()){
+                         if(sharedPreferences.getString("id_user", null).equals(demandeSang.getId_user())){
                              Toast.makeText(getContext(), "Essayer avec une autre demande...", Toast.LENGTH_SHORT).show();
                          }else {
                              confirmDon(demandeSang);
