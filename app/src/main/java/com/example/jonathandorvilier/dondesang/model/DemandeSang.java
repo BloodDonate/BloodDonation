@@ -97,7 +97,7 @@ public class DemandeSang {
 
              public DemandeSang(JSONObject jsonObject) {
                 try {
-                        //this.id_demande = jsonObject.getString("id_user");
+                        this.id_demande = jsonObject.getString("id_demande");
                                this.id_user = jsonObject.getString("id_user");
                         this.qte_sang = jsonObject.getString("qte_sang");
                        this.gsanguin = jsonObject.getString("gsanguin");
