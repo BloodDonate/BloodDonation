@@ -30,6 +30,7 @@ public class VosDemandesActivity extends AppCompatActivity {
     ArrayList<DemandeSang> demandes;
     VosDemandesAdapter adapter;
     ProgressBar progress;
+    String id_user;
     private SwipeRefreshLayout swiperefresh;
     SharedPreferences sharedPreferences ;
     @Override
@@ -42,7 +43,7 @@ public class VosDemandesActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Vos demandes :");
 
         sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
-
+        id_user=sharedPreferences.getString("id_user", null);
         lvVosDemande = (ListView) findViewById(R.id.lvDemande);
         progress = (ProgressBar ) findViewById(R.id.progress);
         swiperefresh = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
@@ -84,7 +85,7 @@ public class VosDemandesActivity extends AppCompatActivity {
         adapter = new VosDemandesAdapter(getApplicationContext(), demandes);
         lvVosDemande.setAdapter(adapter);
 
-        String url = "http://astruitier.com/blood_donation/liste_vos_demand.php";
+        String url = "http://astruitier.com/blood_donation/liste_vos_demand.php?id_user="+id_user;
 
         AsyncHttpClient client = new AsyncHttpClient(true, 80, 443);
         client.get(url, new JsonHttpResponseHandler(){

@@ -30,6 +30,7 @@ public class VosDonsActivity extends AppCompatActivity {
     VosDonsAdapter adapter;
     ProgressBar progress;
     ListView lvVosDons;
+    String id_user;
     private SwipeRefreshLayout swiperefresh;
     SharedPreferences sharedPreferences ;
     @Override
@@ -43,6 +44,7 @@ public class VosDonsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Vos Dons :");
 
         sharedPreferences = getSharedPreferences("PreferencesTAG", Context.MODE_PRIVATE);
+        id_user=sharedPreferences.getString("id_user", null);
 
         lvVosDons = (ListView) findViewById(R.id.lvDemande);
         progress = (ProgressBar ) findViewById(R.id.progress);
@@ -83,7 +85,7 @@ public class VosDonsActivity extends AppCompatActivity {
         adapter = new VosDonsAdapter(getApplicationContext(), dons);
         lvVosDons.setAdapter(adapter);
 
-        String url = "http://astruitier.com/blood_donation/liste_vos_dons.php";
+        String url = "http://astruitier.com/blood_donation/liste_vos_dons.php?id_user="+id_user;
 
         AsyncHttpClient client = new AsyncHttpClient(true, 80, 443);
         client.get(url, new JsonHttpResponseHandler(){
